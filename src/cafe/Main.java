@@ -80,5 +80,8 @@ public class Main {
 			bw.write(output+"\n");
 		}
 		bw.flush();
+		bw.close();
+		br.close();
 	}
+
 }
