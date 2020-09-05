@@ -65,11 +65,14 @@ public class Main {
 			BigDecimal formatNumber = new BigDecimal(total);
 			formatNumber = formatNumber.setScale(2, RoundingMode.DOWN);
 			
-			formatNumber.shortValueExact();
+			String formatNumberS = formatNumber.toString(); 
+			String s;
+			s = formatNumberS.indexOf(".") < 0 ? formatNumberS : formatNumberS.replaceAll("0*$", "").replaceAll("\\.$", ".0");
+			
 			
 			//output
 			String output = "";
-			output += formatNumber+"-";
+			output += s+"-";
 			for (int l = 0; l < values.length-1; l++) {
 				output += values[l] + " "; 
 			}
